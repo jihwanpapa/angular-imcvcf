@@ -1,0 +1,30 @@
+<h2>Products</h2>
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'"> <!-- [] 프로퍼티 바인딩 -->
+      {{product.name}}
+    </a>
+    </h3>
+
+    <p *ngIf="product.description">
+      Description : {{product.description}} <!-- {{}} 문자열 바인딩 -->
+    </p>
+
+    <button (click)="share()"> <!-- () 이벤트 바인딩 -->
+      share
+    </button>
+    <!--새로운 컴포넌트를 추가하기 위해 이 컴포넌트에 지정한 app-product-alert 셀렉터를 HTML 엘리먼트인 것처럼 추가합니다.
+    현재 *ngFor 루프에 해당하는 제품 정보를 프로퍼티 바인딩 문법으로 자식 컴포넌트에 전달
+    -->
+    <app-product-alerts 
+    [product]="product"
+    (notify)="onNotify()"
+    >
+    </app-product-alerts>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
