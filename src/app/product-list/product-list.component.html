@@ -1,7 +1,9 @@
 <h2>Products</h2>
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
+  <!-- ngFor수행시 인덱스변수가할당되는데 이를 productId로 변경 -->
   <h3>
-    <a [title]="product.name + ' details'"> <!-- [] 프로퍼티 바인딩 -->
+    <a [title]="product.name + ' details'" [routerLink]="['/products',productId]"> <!-- [] 프로퍼티 바인딩 -->
+        <!-- 앵커 엘리먼트에 routerlimk디렉티브를 사용하면 엥커의 원래역할보다 라우터가 먼저 처리된다. -->
       {{product.name}}
     </a>
     </h3>
