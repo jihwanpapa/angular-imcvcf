@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,6 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, //컴포넌트 클래스의 생성자에 ActivatedRoute를 의존성으로 주입
     //ActivatedRoute는 라우터가 컴포넌트를 로드할때 사용한 라우팅 규칭이다.
+    private cartService : CartService
   ) { }
 
   ngOnInit() {
@@ -19,6 +21,11 @@ export class ProductDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.product = products[+params.get('productId')];
     });
+  }
+
+  addToCart(product){
+    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(product);
   }
 
 }

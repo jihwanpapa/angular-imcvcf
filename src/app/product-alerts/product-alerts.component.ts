@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core'; //@angular/core 에서 Input 심볼을 로드합니다.
 import { Output, EventEmitter} from '@angular/core';
 
-@Component({
+@Component({ 
+  // @component데코레이터는 아래 클래스가 컴포넌트라는것을 지정하는 데코레이터, 이 데코레이터는 템플릿,스타일,셀렉터와 괕이 컴포넌트와 관련된 메타데이터를 인자로 받는다.
   selector: 'app-product-alerts',
   // selector 는 컴포넌트를 구분하는 id입니다. 그리고 나중에 HTML이 렌더링될 때 이 셀렉터가 사용된 곳에 셀렉터에 해당되는 Angular 컴포넌트가 들어갑니다. 일반적으로 Angular 컴포넌트 셀렉터는 app- 접두사를 사용합니다.
   templateUrl: './product-alerts.component.html',
