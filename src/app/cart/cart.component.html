@@ -8,3 +8,19 @@
   <span>{{item.name}}</span>
   <span>{{item.price | currency}}</span>
 </div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+  <!-- form 태그에 ngSubmit 이벤트를 바인딩하면 폼을 제출하는 동작을 감지할 수 있습니다. ngSubmit 이벤트가 발생하면 checkoutForm 안에 있는 값을 인자로 사용해서 onSubmit() 메소드를 실행
+  -->
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label>Address</label>
+    <input type="text" formControlName="address">
+  </div>
+
+  <button class="button" type="submit"> Purchase</button>
+</form>
