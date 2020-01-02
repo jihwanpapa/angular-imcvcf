@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 
-@Injectable(
-  {provideIn: 'root'}
-)
+@Injectable({
+  providedIn: 'root'
+})
+
 export class CartService {
 
   items = []; //items 프로퍼티를 선언

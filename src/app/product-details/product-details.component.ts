@@ -13,7 +13,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute, //컴포넌트 클래스의 생성자에 ActivatedRoute를 의존성으로 주입
     //ActivatedRoute는 라우터가 컴포넌트를 로드할때 사용한 라우팅 규칭이다.
-    private cartService : CartService
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
@@ -23,7 +23,7 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
-  addToCart(product){
+  addToCart(product) {
     window.alert('Your product has been added to the cart!');
     this.cartService.addToCart(product);
   }
